@@ -49,6 +49,15 @@ export const JsItems = [
 
 export const AngularItems = [
   {
+    title: 'Basic comands',
+    description: `<strong>Correr proyecto:</strong>
+    ng serve <br>
+    <strong>Crear componente:</strong>
+    ng generate component component-name <br>
+    <strong>Crear servicio:</strong>
+    ng generate service service-name`
+  },
+  {
     title: 'Component: Properties & Methods',
     description: `<code>
 export class UserCardComponent {

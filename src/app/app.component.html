@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="side-bar">
+    @for (item of items; track $index) {
+      <div class="side-bar-item" (click)="selector = item" [ngClass]="{ 'selected': selector === item }">{{item}}</div>
+    }
+  </div>
+  <div class="main-content">
+  @switch (selector) {
+    @case ('Empty') {
+      <div class="empty-content content">Select an item from to start the demo</div>
+    }
+
+    @case('Basic JS') {
+      <div class="content">
+        <app-basic-js class="left-alignment"/>
+      </div>
+    }
+
+    @case ('Simple Component') {
+      <div class="content">
+        <app-simple-component/>
+      </div>
+    }
+
+    @case ('Using tipescript in html') {
+      <div class="content">
+        <app-type-script-component/>
+      </div>
+    }
+
+    @case ('Component inside component') {
+      <div class="content">
+        <app-container-component/>
+      </div>
+    }
+
+    @case ('For loop') {
+      <div class="content">
+        <app-for-loop-component/>
+      </div>
+    }
+
+    @case ('If conditional') {
+      <div class="content">
+        <app-if-conditional-component/>
+      </div>
+    }
+
+    @case ('Component with input') {
+      <div class="content">
+        <app-input-component/>
+      </div>
+    }
+
+    @case ('Component with output') {
+      <div class="content">
+        <app-output-component/>
+      </div>
+    }
+  }
+  </div>
+</div>

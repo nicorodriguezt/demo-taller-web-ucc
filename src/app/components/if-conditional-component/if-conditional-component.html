@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="title">Component with If Conditional</div>
+    <button (click)="mostrar = !mostrar" class="simple-button">
+        {{ mostrar? 'Hide component' : 'Show component' }}
+    </button>
+    @if (mostrar) {
+        <app-if-conditional-child/>
+    }
+</div>

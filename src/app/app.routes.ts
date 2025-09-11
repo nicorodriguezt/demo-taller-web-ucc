@@ -9,6 +9,12 @@ import { InputComponent } from './components/input-component/input-component';
 import { OutputComponent } from './components/output-component/output-component';
 import { Empty } from './components/empty/empty';
 
+/*
+  Define the application routes
+  Each route maps a URL path to a component
+  You should have a route with ** path at the end to catch all undefined routes
+  Check app html to understand how to use this routes
+*/ 
 export const routes: Routes = [
   { path: '', component: Empty, pathMatch: 'full' },
   { path: 'basic-js', component: BasicJs },

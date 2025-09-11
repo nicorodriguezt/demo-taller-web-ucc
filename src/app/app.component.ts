@@ -1,26 +1,12 @@
 import { Component } from '@angular/core';
-import { SimpleComponent } from "./components/simple-component/simple-component";
-import { TypeScriptComponent } from "./components/type-script-component/type-script-component";
-import { ContainerComponent } from "./components/container-component/container-component";
-import { ForLoopComponent } from "./components/for-loop-component/for-loop-component";
-import { IfConditionalComponent } from "./components/if-conditional-component/if-conditional-component";
-import { InputComponent } from "./components/input-component/input-component";
-import { OutputComponent } from "./components/output-component/output-component";
-import { CommonModule } from '@angular/common';
-import { BasicJs } from "./components/basic-js/basic-js";
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [
-    SimpleComponent,
-    TypeScriptComponent,
-    CommonModule,
-    ContainerComponent,
-    ForLoopComponent,
-    IfConditionalComponent,
-    InputComponent,
-    OutputComponent,
-    BasicJs
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -28,15 +14,15 @@ import { BasicJs } from "./components/basic-js/basic-js";
 export class AppComponent {
   
   selector = 'Empty';
-  items: string[] = [
-    "Empty",
-    "Basic JS",
-    "Simple Component",
-    "Using tipescript in html",
-    "Component inside component",
-    "Component with input",
-    "Component with output",
-    "For loop",
-    "If conditional",
-  ];
-}
+items = [
+  { label: "Empty", route: "" },
+  { label: "Basic JS", route: "/basic-js" },
+  { label: "Simple Component", route: "/simple-component" },
+  { label: "Using typescript in html", route: "/using-typescript-in-html" },
+  { label: "Component inside component", route: "/component-inside-component" },
+  { label: "Component with input", route: "/component-with-input" },
+  { label: "Component with output", route: "/component-with-output" },
+  { label: "For loop", route: "/for-loop" },
+  { label: "If conditional", route: "/if-conditional" }
+];
+} 

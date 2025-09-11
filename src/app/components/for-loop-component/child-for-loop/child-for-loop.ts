@@ -8,6 +8,6 @@ import { Component, input } from '@angular/core';
 })
 export class ChildForLoop {
 
-  inputValue = input<number>(0)
+  inputValue = input<string>('')
 
 }

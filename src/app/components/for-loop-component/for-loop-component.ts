@@ -9,5 +9,5 @@ import { ChildForLoop } from './child-for-loop/child-for-loop';
 })
 export class ForLoopComponent {
 
-  items = [100,2,332132]
+  items = ['A','B','C', 'D']
 }

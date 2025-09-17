@@ -1,4 +1,5 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 // A service is injectable by nature
 // because of the @Injectable decorator
@@ -8,6 +9,7 @@ import { computed, Injectable, signal } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
+  router = inject(Router);
 
   // Using Angular Signals to manage login state
   private loggedIn = signal(false);
@@ -20,6 +22,7 @@ export class LoginService {
   }
 
   logout() {
+    this.router.navigateByUrl('');
     this.loggedIn.set(false);
   }
 }

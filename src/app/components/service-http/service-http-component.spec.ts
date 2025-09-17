@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Empty } from './empty';
+import { ServiceHttpComponent } from './service-http-component';
 
-describe('Empty', () => {
-  let component: Empty;
-  let fixture: ComponentFixture<Empty>;
+describe('ServiceHttp', () => {
+  let component: ServiceHttpComponent;
+  let fixture: ComponentFixture<ServiceHttpComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Empty]
+      imports: [ServiceHttpComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Empty);
+    fixture = TestBed.createComponent(ServiceHttpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

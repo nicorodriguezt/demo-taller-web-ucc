@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ServiceHttp } from './service-http';
+import { ArtItem } from './art-item';
 
-describe('ServiceHttp', () => {
-  let component: ServiceHttp;
-  let fixture: ComponentFixture<ServiceHttp>;
+describe('ArtItem', () => {
+  let component: ArtItem;
+  let fixture: ComponentFixture<ArtItem>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ServiceHttp]
+      imports: [ArtItem]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ServiceHttp);
+    fixture = TestBed.createComponent(ArtItem);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

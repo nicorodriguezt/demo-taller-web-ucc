@@ -6,6 +6,7 @@
         class="side-bar-item"
         [routerLink]="item.route"
         routerLinkActive="selected"
+        [hidden]="item.authRequired && !loginService.isLoggedIn()"
         [routerLinkActiveOptions]="{ exact: true }"
       >
         {{ item.label }}

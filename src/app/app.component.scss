@@ -12,6 +12,9 @@
     align-items: left;
     border-right: solid 1px #4b4b52;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    
 }
 
 .item {

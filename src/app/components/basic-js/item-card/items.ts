@@ -53,9 +53,11 @@ export const AngularItems = [
     description: `<strong>Correr proyecto:</strong>
     ng serve <br>
     <strong>Crear componente:</strong>
-    ng generate component component-name <br>
+    ng generate c component-name <br>
     <strong>Crear servicio:</strong>
-    ng generate service service-name`
+    ng generate s service-name
+     <strong>Crear guard:</strong>
+    ng generate g service-name`
   },
   {
     title: 'Component: Properties & Methods',

@@ -10,7 +10,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
   if (!loginService.isLoggedIn()) {
     alert("You must be logged in to access this page.");
-    router.navigate(['/login']);
+    router.navigate(['']);
     return false;
   }
   return true;

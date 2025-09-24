@@ -205,5 +205,9 @@ console.log(user.greet());
 </code></pre>
     <em>// Classes can hold both data and behavior (methods).</em>
   `
+},
+{
+  title: 'Fake server json',
+  description: "https://github.com/techiediaries/fake-api-jwt-json-server"
 }
 ];

@@ -10,6 +10,9 @@ import { OutputComponent } from './components/output-component/output-component'
 import { UsingService } from './components/using-service-component/using-service-component';
 import { authGuard } from './misc/auth-guard';
 import { ServiceHttpComponent } from './components/service-http/service-http-component';
+import { PrimengDisplay } from './components/primeng-display/primeng-display';
+import { ReactiveForms } from './components/reactive-forms/reactive-forms';
+import { PipeExamples } from './components/pipe-examples/pipe-examples';
 
 /*
   Define the application routes
@@ -70,6 +73,21 @@ export const routes: Routes = [
     path: 'service-http', 
     component: ServiceHttpComponent,
     canActivate: [authGuard]
+  }, 
+  {
+    path: 'primeng-display', 
+    component: PrimengDisplay,
+    canActivate: [authGuard]
+  },
+  { 
+    path: 'reactive-form', 
+    component: ReactiveForms,
+    canActivate: [authGuard]
+  },
+  {
+    path: 'pipe-example', 
+    component: PipeExamples,
+    canActivate: [authGuard] 
   },
   { 
     path: '**', redirectTo: ''

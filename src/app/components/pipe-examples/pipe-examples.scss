@@ -1,0 +1,20 @@
+@use '../../styles/variables' as *;
+
+.container {
+    height: 460px;
+    width: 520px;
+    background-color: $light-gray;
+    color: $dark-text;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 12px;
+    padding-top: 24px;
+    gap: 8px;
+}
+
+.title {
+    font-size: 32px;
+}

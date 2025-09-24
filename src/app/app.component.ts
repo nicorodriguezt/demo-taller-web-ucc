@@ -27,6 +27,9 @@ items = [
   { label: "Component with output", route: "/component-with-output", authRequired: true },
   { label: "For loop", route: "/for-loop", authRequired: true },
   { label: "If conditional", route: "/if-conditional", authRequired: true },
-  { label: "Service HTTP", route: "/service-http", authRequired: true }
+  { label: "Service HTTP", route: "/service-http", authRequired: true },
+  { label: "PrimeNG Display", route: "/primeng-display", authRequired: true },
+  { label: "Reactive Form", route: "/reactive-form", authRequired: true },
+  { label: "Pipe Example", route: "/pipe-example", authRequired: true },
 ];
 } 

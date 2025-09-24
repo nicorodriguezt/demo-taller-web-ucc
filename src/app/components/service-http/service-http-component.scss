@@ -1,4 +1,5 @@
 @use '../../styles/variables' as *;
+@use "sass:color";
 
 .container {
     height: 680px;
@@ -53,7 +54,7 @@
 }
 
 .simple-button:disabled {
-    background-color: lighten($dark-gray, 10%);
+    background-color: color.adjust($dark-gray, $lightness: 10%);
     color: $light-text;
     box-shadow: 0 4px 6px rgba(48, 39, 39, 0.15);
     cursor: not-allowed;

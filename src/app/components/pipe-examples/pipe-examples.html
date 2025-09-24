@@ -1,0 +1,15 @@
+<div class="container">
+<div class="title">Built-in Pipes Demo</div>
+
+    <div>Original name: {{ name }}</div>
+    <div>Uppercase: {{ name | uppercase }}</div>
+    <div>Lowercase: {{ name | lowercase }}</div>
+
+    <div>Price: {{ price | currency:'USD':'symbol':'1.2-2' }}</div>
+
+    <div>Today: {{ today | date:'fullDate' }}</div>
+    <div>Today: {{ today | date:'dd-mm-yyyy' }}</div>
+
+    <div>List (JSON): </div>
+    <pre>{{ items | json }}</pre>
+</div>

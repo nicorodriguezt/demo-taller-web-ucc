@@ -6,6 +6,9 @@ export const httpInterceptor: HttpInterceptorFn = (
     next: HttpHandlerFn
 ): Observable<HttpEvent<unknown>> => {
     console.log('[LogInterceptor] Request went through interceptor');
+    // Here we would typically add auth tokens or custom headers
+    // const authReq = req.clone({ setHeaders: { Authorization: `Bearer ${token}` } });
+    // You should return the new request.
     return next(req).pipe(
         filter(event => event instanceof HttpResponse),
         tap(() => {

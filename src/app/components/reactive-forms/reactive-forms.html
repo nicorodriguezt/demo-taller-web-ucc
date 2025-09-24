@@ -1,0 +1,112 @@
+<div class="title">PrimeNG Reactive Form</div>
+<div class="container">
+  <p-card [header]="'User Registration Form'">
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form" novalidate>
+
+      <!-- Full Name -->
+      <div class="field">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" type="text" pInputText formControlName="fullName" />
+        @if (form.get('fullName')?.touched && form.get('fullName')?.hasError('required')) {
+          <small class="p-error">Name is required</small>
+        }
+        @if (form.get('fullName')?.touched && form.get('fullName')?.hasError('minlength')) {
+          <small class="p-error">Minimum 3 characters</small>
+        }
+        @if (form.get('fullName')?.touched && form.get('fullName')?.hasError('noEmoji')) {
+          <small class="p-error">Emojis are not allowed in the name</small>
+        }
+      </div>
+
+      <!-- Email -->
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" pInputText formControlName="email" />
+        @if (form.get('email')?.touched && form.get('email')?.hasError('required')) {
+          <small class="p-error">Email is required</small>
+        }
+        @if (form.get('email')?.touched && form.get('email')?.hasError('email')) {
+          <small class="p-error">Enter a valid email</small>
+        }
+      </div>
+
+      <!-- Age -->
+      <div class="field">
+        <label for="age">Age</label>
+        <p-inputNumber inputId="age" formControlName="age" [min]="18" [max]="120"></p-inputNumber>
+        @if (form.get('age')?.touched && form.get('age')?.hasError('required')) {
+          <small class="p-error">Age is required</small>
+        }
+        @if (form.get('age')?.touched && (form.get('age')?.hasError('min') || form.get('age')?.hasError('max'))) {
+          <small class="p-error">Age must be between 18 and 120</small>
+        }
+      </div>
+
+      <!-- Birth Date -->
+      <div class="field">
+        <label for="birthDate">Birth Date</label>
+        <p-date-picker inputId="birthDate" formControlName="birthDate" dateFormat="yy-mm-dd" [showIcon]="true"></p-date-picker>
+        @if (form.get('birthDate')?.touched && form.get('birthDate')?.hasError('required')) {
+          <small class="p-error">Birth date is required</small>
+        }
+        @if (form.get('birthDate')?.touched && form.get('birthDate')?.hasError('notInFuture')) {
+          <small class="p-error">Birth date cannot be in the future</small>
+        }
+      </div>
+
+      <!-- Country -->
+      <div class="field">
+        <label for="country">Country</label>
+        <p-select inputId="country" [options]="countries" formControlName="country" optionLabel="label"></p-select>
+        @if (form.get('country')?.touched && form.get('country')?.hasError('required')) {
+          <small class="p-error">Country is required</small>
+        }
+      </div>
+
+      <!-- Password -->
+      <div class="field">
+        <label for="password">Password</label>
+        <p-password inputId="password" formControlName="password" [feedback]="true"></p-password>
+        @if (form.get('password')?.touched && form.get('password')?.hasError('required')) {
+          <small class="p-error">Password is required</small>
+        }
+        @if (form.get('password')?.touched && form.get('password')?.hasError('minlength')) {
+          <small class="p-error">At least 8 characters</small>
+        }
+        @if (form.get('password')?.touched && form.get('password')?.hasError('weakPassword')) {
+          <small class="p-error">Include upper, lower, and a number</small>
+        }
+      </div>
+
+      <!-- Start/End Date -->
+      <div class="field">
+        <label for="startDate">Start Date</label>
+        <p-date-picker inputId="startDate" formControlName="startDate" [showIcon]="true"></p-date-picker>
+      </div>
+      <div class="field">
+        <label for="endDate">End Date</label>
+        <p-date-picker inputId="endDate" formControlName="endDate" [showIcon]="true"></p-date-picker>
+        @if (form.touched && form.hasError('invalidDateRange')) {
+          <small class="p-error">End date must be the same as or after Start date</small>
+        }
+      </div>
+
+      <!-- Agree -->
+      <div class="field">
+        <p-checkbox inputId="agree" formControlName="agree" binary="true"></p-checkbox>
+        <label for="agree" class="ml-2">I agree to the terms</label>
+        <br />
+        @if (form.get('agree')?.touched && form.get('agree')?.hasError('requiredTrue')) {
+          <small class="p-error">You must agree before submitting</small>
+        }
+      </div>
+
+      <p-button type="submit" label="Submit" icon="pi pi-save" [disabled]="form.invalid"></p-button>
+    </form>
+  </p-card>
+
+  <!-- Debug output -->
+  <p-card [header]="'Current Values'">
+    <pre class="mt-3">{{ form.value | json }}</pre>
+  </p-card>
+</div>

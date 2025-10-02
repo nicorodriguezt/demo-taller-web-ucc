@@ -16,7 +16,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimations(),
     providePrimeNG({ 
-      theme: { preset: Aura} 
+      theme: {
+         preset: Aura
+        } 
     })
   ]
 };

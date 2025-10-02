@@ -9,7 +9,9 @@ export const httpInterceptor: HttpInterceptorFn = (
     // Here we would typically add auth tokens or custom headers
     // const authReq = req.clone({ setHeaders: { Authorization: `Bearer ${token}` } });
     // You should return the new request.
-    return next(req).pipe(
+    const token = localStorage.getItem('token');
+    const authReq = req.clone({ setHeaders: { Authorization: `Bearer ${token}` } });
+    return next(authReq).pipe(
         filter(event => event instanceof HttpResponse),
         tap(() => {
             console.log('[LogInterceptor] Response went through interceptor');

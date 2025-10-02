@@ -12,17 +12,26 @@ export class LoginService {
   router = inject(Router);
 
   // Using Angular Signals to manage login state
-  private loggedIn = signal(false);
+  private token = signal<string>('');
 
   // Computed property to expose login state
-  public isLoggedIn = computed(() => this.loggedIn());
+  public isLoggedIn = computed(() => !!this.token());
+
+  constructor() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.token.set(token);
+    }
+  }
 
   login() {
-    this.loggedIn.set(true);
+    this.token.set('dummy-token');
+    localStorage.setItem('token', this.token());
   }
 
   logout() {
     this.router.navigateByUrl('');
-    this.loggedIn.set(false);
+    this.token.set('');
+    localStorage.removeItem('token');
   }
 }

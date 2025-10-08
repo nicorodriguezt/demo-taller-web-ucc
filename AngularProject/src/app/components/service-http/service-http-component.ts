@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { ExampleService } from '../../services/example-service';
 import { ArtItem } from "./art-item/art-item";
 
@@ -12,4 +12,9 @@ export class ServiceHttpComponent {
 
   //Injecting the ExampleService to fetch data
   exampleService = inject(ExampleService);
+
+
+  displayedData = computed(() => 
+    [this.exampleService.isLoading().toString(), this.exampleService.page().toString()]
+  );
 }

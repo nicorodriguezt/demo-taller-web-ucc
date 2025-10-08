@@ -7,6 +7,7 @@
         }
     </div>
     <div class="buttons-container">
+        <div>{{displayedData()}}</div>
         <!-- Calling the methods from the service-->
         <button class="simple-button" 
         [disabled]="exampleService.isLoading() || exampleService.page() === 1" (click)="exampleService.prevPage()">

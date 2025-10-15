@@ -14,6 +14,8 @@ function Layout() {
     { name: "Note List", path: "/notes", auth: true },
     { name: "Use Effect", path: "/use-effect", auth: true },
     { name: "Http Example", path: "/http-example", auth: true },
+    { name: "Form Example", path: "/form-example", auth: true },
+    { name: "Material Example", path: "/material-example", auth: true },
     { name: "Logout", path: "/logout", auth: true },
   ];
 

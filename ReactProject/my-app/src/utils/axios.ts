@@ -27,6 +27,10 @@ api.interceptors.response.use(
   (error) => {
     console.error("[RES ERROR]", error?.response?.status, error?.message);
     // Optionally handle 401/403, refresh token, etc.
+    if(error.response?.status === 401) {
+      // e.g., redirect to login
+      console.log("Unauthorized! Redirecting to login...");
+    }
     return Promise.reject(error);
   }
 );

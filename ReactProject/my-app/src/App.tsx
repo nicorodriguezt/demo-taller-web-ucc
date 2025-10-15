@@ -11,6 +11,8 @@ import InputExample from './components/UserCard/InputExample'
 import OutputExample from './components/TitleButtonContainer/OutputExampleContainer'
 import HttpExample from './components/UserDisplay/HttpExample'
 import NoteList from './components/NoteList/NoteList'
+import FormExample from './components/Forms/forms-example'
+import MaterialExample from './components/MaterialExample/material-example'
 
 function App() {
   return (
@@ -31,9 +33,9 @@ function App() {
           <Route path="/notes" element={<NoteList />} />
           <Route path="/use-effect" element={<UseEffectBasics />} />
           <Route path="/http-example" element={<HttpExample />} />
-         
-       
           <Route path="/user-display" element={<HelloWorld />} />
+          <Route path="/form-example" element={<FormExample />} />
+          <Route path="/material-example" element={<MaterialExample />} />
         </Route>
 
         {/* Fallback */}

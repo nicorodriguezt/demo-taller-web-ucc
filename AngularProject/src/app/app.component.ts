@@ -31,5 +31,7 @@ items = [
   { label: "PrimeNG Display", route: "/primeng-display", authRequired: true },
   { label: "Reactive Form", route: "/reactive-form", authRequired: true },
   { label: "Pipe Example", route: "/pipe-example", authRequired: true },
+  { label: "Redux Example", route: "/redux-example", authRequired: true },
+  { label: "No Redux Example", route: "/no-redux-example", authRequired: true },
 ];
 } 

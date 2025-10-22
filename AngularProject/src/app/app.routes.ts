@@ -13,6 +13,8 @@ import { ServiceHttpComponent } from './components/service-http/service-http-com
 import { PrimengDisplay } from './components/primeng-display/primeng-display';
 import { ReactiveForms } from './components/reactive-forms/reactive-forms';
 import { PipeExamples } from './components/pipe-examples/pipe-examples';
+import { ReduxComponent } from './redux/redux.component';
+import { NoReduxComponent } from './redux/problems-redux-solves/no-redux.componet';
 
 /*
   Define the application routes
@@ -87,6 +89,16 @@ export const routes: Routes = [
   {
     path: 'pipe-example', 
     component: PipeExamples,
+    canActivate: [authGuard] 
+  },
+  {
+    path: 'redux-example', 
+    component: ReduxComponent,
+    canActivate: [authGuard] 
+  },
+   {
+    path: 'no-redux-example', 
+    component: NoReduxComponent,
     canActivate: [authGuard] 
   },
   { 
